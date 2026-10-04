@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Project | Daniel Achkar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<!--
+  PROJECT PAGE
+  1. Set data-slug below to this folder's name (must match the slug in assets/js/projects.js).
+  2. The title, one-liner, details panel, video and previous/next buttons fill in automatically.
+  3. Replace each grey "To add" box below with your own text and images.
+     Images go in assets/img/<slug>/ and are linked as ../assets/img/<slug>/file.jpg
+-->
+<div id="app" data-root="../" data-page="project" data-slug="npc-ai">
+<main>
+  <header class="page-head">
+    <div class="wrap" data-project-head></div>
+  </header>
+
+  <div class="wrap project-layout">
+    <article>
+      <div class="media" data-project-media></div>
+
+      <section class="content-section" id="overview">
+        <h2>Overview</h2>
+        <p>Autonomous NPC AI is a solo Unity project in which an NPC finds its own way around a level and decides for itself what to do. It patrols the level, spots energy blocks and goes to collect them, and stops to investigate when it hears a sound.</p>
+        <p>I built it in two stages over 8 weeks. The first stage was the movement and a simple A* pathfinding on a square grid, where the NPC moves up, down, left and right. The second added the senses and the decision-making on top. The level has walls that can be switched on and off, collectible energy blocks and sound emitters, plus an on-screen debug panel that shows the NPC's current path.</p>
+      </section>
+
+      <section class="content-section" id="role">
+        <h2>My role</h2>
+        <p>This was a solo project, so I built every part of it:</p>
+        <ul>
+          <li>Implemented a simple grid-based version of A* pathfinding in C#, plus a path follower that moves the NPC from waypoint to waypoint.</li>
+          <li>Built a vision sense: a view cone with range, angle and wall line-of-sight checks, so the NPC only sees what it should.</li>
+          <li>Built a hearing sense that picks up nearby sound emitters.</li>
+          <li>Wrote the decision-making controller, a priority-based state machine with three states: Collect, Investigate and Patrol.</li>
+          <li>Added an energy system: energy drains over time, and if it runs out the NPC stops moving. Collecting energy blocks refills it, which gives the NPC a reason to go after them.</li>
+          <li>Created debug tools: an on-screen panel showing path length, the current waypoint and the target position, and keyboard controls for turning walls on and off.</li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="process">
+        <h2>How it works</h2>
+        <h3>Sense, decide, move</h3>
+        <p>I split the AI into three layers, each made of separate scripts:</p>
+        <ol>
+          <li><strong>Sensing:</strong> VisionSense and SoundSense collect information about the world.</li>
+          <li><strong>Deciding:</strong> the NPC Controller chooses what the NPC should do.</li>
+          <li><strong>Moving:</strong> the pathfinding and movement scripts carry it out.</li>
+        </ol>
+        <p>No layer needs to know how the others work internally.</p>
+        <h3>Priorities, not randomness</h3>
+        <p>The NPC always follows the same order:</p>
+        <ol>
+          <li><strong>Collect:</strong> if it can see an energy block, it goes for it. It keeps going even if the block leaves its view, as long as the block is still there.</li>
+          <li><strong>Investigate:</strong> if it hears a sound and isn't collecting anything, it goes to check the source.</li>
+          <li><strong>Patrol:</strong> if nothing else is happening, it moves between patrol points.</li>
+        </ol>
+        <p>Once it collects the block or reaches the sound, it clears that target and goes back to patrolling.</p>
+        <h3>Seeing properly</h3>
+        <p>An object only counts as seen if it's within range, inside the view cone, and not behind a wall. An early bug let the NPC detect blocks through walls. Because vision lived in its own script, I could fix it there without touching the controller or the movement code.</p>
+        <h3>Handling walls that change</h3>
+        <p>Walls can be switched on and off while the game runs. The path doesn't recalculate when that happens. Instead, the NPC uses its vision to spot the new wall and work its way around it as well as it can.</p>
+        <h3>Getting A* to work</h3>
+        <p>Pathfinding was the hardest part of the project. For a long time the NPC wouldn't follow its path properly, or kept heading to the middle of the map instead of its target. Working through tutorials helped me understand where my implementation was going wrong, and I fixed it step by step.</p>
+        <h3>Reusing the AI</h3>
+        <p>To test how modular the system really was, I added a second NPC. It runs on exactly the same scripts, with only some settings changed in the Inspector.</p>
+      </section>
+
+      <section class="content-section" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <!-- Replace each placeholder with: <figure><img src="../assets/img/npc-ai/shot1.jpg" alt="Describe the image"></figure> -->
+          <div class="shot-ph mono">Screenshot</div>
+          <div class="shot-ph mono">Screenshot</div>
+          <div class="shot-ph mono">Screenshot</div>
+        </div>
+      </section>
+
+      <section class="content-section" id="learned">
+        <h2>What I learned</h2>
+        <p>The biggest lesson was the value of keeping AI modular. Splitting vision, hearing, decisions and movement into separate scripts made each part easier to debug and to reuse. On a large team, it would also let different programmers work on senses, decisions and movement at the same time without breaking each other's code.</p>
+        <p>I also learned how hard pathfinding is to get right. A small mistake can send the NPC somewhere completely different, so being able to see the path in the debug panel was essential.</p>
+        <p>Next I would:</p>
+        <ul>
+          <li><strong>Fix the jittery movement</strong> that happens when an NPC gets close to an energy block.</li>
+          <li><strong>Recalculate the path when walls change,</strong> so the NPC doesn't have to rely only on its vision to get around them.</li>
+        </ul>
+      </section>
+    </article>
+
+    <aside class="project-aside">
+      <div class="panel" data-project-info></div>
+      <nav class="panel toc" aria-label="On this page">
+        <h2 class="panel-title mono">On this page</h2>
+        <ol>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#role">My role</a></li>
+          <li><a href="#process">How it works</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#learned">What I learned</a></li>
+        </ol>
+      </nav>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <nav class="pager" data-project-pager aria-label="More projects"></nav>
+  </div>
+</main>
+</div>
+<script src="../assets/js/projects.js"></script>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Project | Daniel Achkar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<!--
+  PROJECT PAGE
+  1. Set data-slug below to this folder's name (must match the slug in assets/js/projects.js).
+  2. The title, one-liner, details panel, video and previous/next buttons fill in automatically.
+  3. Replace each grey "To add" box below with your own text and images.
+     Images go in assets/img/<slug>/ and are linked as ../assets/img/<slug>/file.jpg
+-->
+<div id="app" data-root="../" data-page="project" data-slug="SLUG-HERE">
+<main>
+  <header class="page-head">
+    <div class="wrap" data-project-head></div>
+  </header>
+
+  <div class="wrap project-layout">
+    <article>
+      <div class="media" data-project-media></div>
+
+      <section class="content-section" id="overview">
+        <h2>Overview</h2>
+        <div class="todo"><strong>To add</strong>What the game is, the core loop, and what makes it interesting. Two or three short paragraphs.</div>
+      </section>
+
+      <section class="content-section" id="role">
+        <h2>My role</h2>
+        <div class="todo"><strong>To add</strong>A short list of what you personally designed or built. You can reuse your resume bullets here and expand on them.</div>
+      </section>
+
+      <section class="content-section" id="process">
+        <h2>Design process</h2>
+        <div class="todo"><strong>To add</strong>How the project developed: early ideas, iterations, playtesting findings and the changes they led to. Diagrams, sketches or GDD excerpts work well here.</div>
+      </section>
+
+      <section class="content-section" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <!-- Replace each placeholder with: <figure><img src="../assets/img/SLUG/shot1.jpg" alt="Describe the image"></figure> -->
+          <div class="shot-ph mono">Screenshot</div>
+          <div class="shot-ph mono">Screenshot</div>
+          <div class="shot-ph mono">Screenshot</div>
+        </div>
+      </section>
+
+      <section class="content-section" id="learned">
+        <h2>What I learned</h2>
+        <div class="todo"><strong>To add</strong>What went well, what you would change, and what you took into later projects.</div>
+      </section>
+    </article>
+
+    <aside class="project-aside">
+      <div class="panel" data-project-info></div>
+      <nav class="panel toc" aria-label="On this page">
+        <h2 class="panel-title mono">On this page</h2>
+        <ol>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#role">My role</a></li>
+          <li><a href="#process">Design process</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#learned">What I learned</a></li>
+        </ol>
+      </nav>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <nav class="pager" data-project-pager aria-label="More projects"></nav>
+  </div>
+</main>
+</div>
+<script src="../assets/js/projects.js"></script>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

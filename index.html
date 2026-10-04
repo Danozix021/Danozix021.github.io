@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daniel Achkar Portfolio</title>
+<meta name="description" content="Portfolio of Daniel Achkar, game designer and programmer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="app" data-root="" data-page="home">
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow mono">Game Designer &amp; Programmer · Abu Dhabi</p>
+        <h1>Daniel <span>Achkar</span></h1>
+        <p class="lede">Games programming student at SAE University College Dubai with a strong focus on game design: systems, narrative and playtesting, backed by hands-on Unity/C# programming.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="projects.html">View projects</a>
+          <a class="btn" data-resume href="#" target="_blank" rel="noopener">Resume</a>
+          <a class="btn" data-github href="#" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <!-- Your photo appears here once "photo" is set in assets/js/projects.js -->
+      <figure class="hero-photo" data-photo hidden></figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow mono">Featured work</p>
+          <h2>Selected projects</h2>
+        </div>
+        <a class="mono" href="projects.html">All projects &rarr;</a>
+      </div>
+      <!-- Cards come from assets/js/projects.js (entries with featured: true) -->
+      <div class="grid" data-project-grid="featured"></div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <div>
+          <p class="eyebrow mono">Contact</p>
+          <h2>Let's talk</h2>
+          <p class="lede">Open to game design and gameplay programming internships.</p>
+        </div>
+        <div class="email-line">
+          <span class="mono" data-email></span>
+          <button class="btn" type="button" data-copy-email>Copy email</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</div>
+<script src="assets/js/projects.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

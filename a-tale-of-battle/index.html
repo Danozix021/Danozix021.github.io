@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Project | Daniel Achkar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<!--
+  PROJECT PAGE
+  1. Set data-slug below to this folder's name (must match the slug in assets/js/projects.js).
+  2. The title, one-liner, details panel, video and previous/next buttons fill in automatically.
+  3. Replace each grey "To add" box below with your own text and images.
+     Images go in assets/img/<slug>/ and are linked as ../assets/img/<slug>/file.jpg
+-->
+<div id="app" data-root="../" data-page="project" data-slug="a-tale-of-battle">
+<main>
+  <header class="page-head">
+    <div class="wrap" data-project-head></div>
+  </header>
+
+  <div class="wrap project-layout">
+    <article>
+      <div class="media" data-project-media></div>
+
+      <section class="content-section" id="overview">
+        <h2>Overview</h2>
+        <p>A Tale of Battle is a 1v1 deck-building board game about a tug of war between two armies. Each player starts with the same small deck and builds it up over the game, buying stronger warriors and upgrades to outplay their opponent.</p>
+        <p>The board has three lanes and a wall down the middle. Both players secretly place warriors in the lanes behind the wall. Then the wall comes down and each lane fights in turn. Combat uses dice: a card's attack sets how many dice it rolls, and the total has to beat the opposing card's defence to defeat it. Any warrior facing an empty lane hits the opposing player directly.</p>
+        <p>After each battle, the defensive line moves one step towards the loser. The further a player pushes the line, the more victory points they earn, and the first to 10 wins. But the player being pushed back gets extra gold to spend in the shop, so a comeback is always possible.</p>
+        <p>We designed it in a team of two over 4 weeks. The finished game has a printed set of around 20–30 warrior cards and 10–20 upgrade cards.</p>
+      </section>
+
+      <section class="content-section" id="role">
+        <h2>My role</h2>
+        <p>We shared the design work. My teammate focused on the art, and I focused on the rules and the systems.</p>
+        <ul>
+          <li>Co-designed the core systems: hidden deployment across three lanes, dice-based combat, the moving defensive line and the shop.</li>
+          <li>Wrote the full rulebook and co-wrote the Game Design Document.</li>
+          <li>Focused on the sense of progression: stronger cards to buy and health that grows over the game, so players feel their army getting more powerful.</li>
+          <li>Turned feedback from group playtesting into rule and balance changes.</li>
+          <li>Co-created the game pitch and presented it to the class.</li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="process">
+        <h2>Design process</h2>
+        <h3>Learning from other games</h3>
+        <p>We studied three games and took one idea from each:</p>
+        <ul>
+          <li><strong>Super Auto Pets:</strong> the round-based shop.</li>
+          <li><strong>Inscryption:</strong> the lane-based combat.</li>
+          <li><strong>Slay the Spire:</strong> the deck-building conventions, such as a draw pile, a discard pile and a playable hand.</li>
+        </ul>
+        <h3>Designing for a tug of war</h3>
+        <p>Using the MDA framework, we set Challenge as the main aesthetic: players should win through strategy and smart card combinations. Fellowship (head-to-head competition) and Sensation (the tension of each dice roll and card draw) came second. We wanted players to feel the pressure of being pushed back, and to be able to turn the game around. The moving defensive line and the extra gold for the losing player make that possible.</p>
+        <h3>What playtesting changed</h3>
+        <p>Feedback from group playtesting led to several changes:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Feedback</th><th>What we changed</th></tr></thead>
+            <tbody>
+              <tr><td>The rules were too complex</td><td>Printed the steps of each round on the wall, so players can check them during play</td></tr>
+              <tr><td>It didn't feel enough like a deck builder</td><td>Researched Slay the Spire and added a draw pile, a discard pile and a hand</td></tr>
+              <tr><td>The board was too big and busy</td><td>Made the lanes 40% smaller</td></tr>
+              <tr><td>Too much maths during combat</td><td>Made defence a fixed number instead of a roll, to cut down on adding</td></tr>
+              <tr><td>One player started stronger than the other</td><td>Gave both players the same starting deck</td></tr>
+              <tr><td>Rounds felt boring when you had nothing to play</td><td>Added a mana cost for playing cards, so every round involves a decision</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Balancing the cards</h3>
+        <p>The hardest part was balancing the cards so they worked together without any single card being too strong. We adjusted costs, attack and defence across several rounds of testing.</p>
+      </section>
+
+      <section class="content-section" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <!-- Replace each placeholder with: <figure><img src="../assets/img/a-tale-of-battle/shot1.jpg" alt="Describe the image"></figure> -->
+          <div class="shot-ph mono">Screenshot</div>
+          <div class="shot-ph mono">Screenshot</div>
+          <div class="shot-ph mono">Screenshot</div>
+        </div>
+      </section>
+
+      <section class="content-section" id="learned">
+        <h2>What I learned</h2>
+        <p>This was my first board game, and it showed me how quickly playtesting exposes problems you can't see on paper. Almost every major change came from watching people play.</p>
+        <p>I also improved how I work in a team. My teammate and I couldn't meet in person often, so we worked over regular calls. Saying ideas out loud and responding to each other's suggestions kept us on the same page.</p>
+        <p>Pitching the game taught me to present with mostly visuals instead of text, which helped me explain the idea rather than read from slides.</p>
+      </section>
+    </article>
+
+    <aside class="project-aside">
+      <div class="panel" data-project-info></div>
+      <nav class="panel toc" aria-label="On this page">
+        <h2 class="panel-title mono">On this page</h2>
+        <ol>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#role">My role</a></li>
+          <li><a href="#process">Design process</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#learned">What I learned</a></li>
+        </ol>
+      </nav>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <nav class="pager" data-project-pager aria-label="More projects"></nav>
+  </div>
+</main>
+</div>
+<script src="../assets/js/projects.js"></script>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

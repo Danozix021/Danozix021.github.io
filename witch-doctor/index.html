@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Project | Daniel Achkar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<!--
+  PROJECT PAGE
+  1. Set data-slug below to this folder's name (must match the slug in assets/js/projects.js).
+  2. The title, one-liner, details panel, video and previous/next buttons fill in automatically.
+  3. Replace each grey "To add" box below with your own text and images.
+     Images go in assets/img/<slug>/ and are linked as ../assets/img/<slug>/file.jpg
+-->
+<div id="app" data-root="../" data-page="project" data-slug="witch-doctor">
+<main>
+  <header class="page-head">
+    <div class="wrap" data-project-head></div>
+  </header>
+
+  <div class="wrap project-layout">
+    <article>
+      <div class="media" data-project-media></div>
+
+      <section class="content-section" id="overview">
+        <h2>Overview</h2>
+        <p>Witch Doctor is a physics-based first-person game set in a medieval witch's hut. Sick villagers come to you for help. Talking to them gives you hints about their symptoms, and you can see them getting worse over time. If you take too long, they die.</p>
+        <p>To save them, you work out the illness and brew a cure by hand. You buy ingredients from the shop, chop or grind the ones that need it, and combine them into the right remedy. Everything is a physical object you can pick up and move, including the bag of coins you pay with.</p>
+        <p>Players can choose between two ways to play. The <strong>Tutorial</strong> walks them through each step of the game. <strong>Start</strong> drops them straight in with no instructions, for players who want to work it out themselves.</p>
+        <p>We built Witch Doctor as a vertical slice in Unity over 13 weeks, in a team of four.</p>
+      </section>
+
+      <section class="content-section" id="role">
+        <h2>My role</h2>
+        <p>I was the team's game designer and also programmed the shop. Of my teammates, one focused on art, one on programming, and one on asset integration and some art.</p>
+        <h3>Design</h3>
+        <ul>
+          <li>Designed the core gameplay loop and the ingredient system: 9 illnesses and 8 ingredients, some of which can be chopped or ground into different states.</li>
+          <li>Helped design the tutorial, which walks new players through each step of the game.</li>
+          <li>Wrote most of the project documentation, including the full Game Design Document and the market research.</li>
+          <li>Planned and ran 3 rounds of playtesting with 10+ testers, analysed the results, and turned the findings into changes we shipped.</li>
+        </ul>
+        <h3>Programming</h3>
+        <ul>
+          <li>Designed and programmed the shop system from scratch in C#: catalogue UI, cart and transaction logic, and delivery of purchased ingredients into the hut. I connected it to a teammate's interaction system without changing their code.</li>
+          <li>Built the physical currency system: a coin bag the player carries and a piggy bank they deposit it into.</li>
+          <li>Refactored how menus open and close into a reusable base class that the team could use for later UI.</li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="process">
+        <h2>Design process</h2>
+        <h3>Diagnosis under pressure</h3>
+        <p>I didn't want diagnosing to be a quiz. Instead, players read the clues: what a patient says when you talk to them, and how they look as they get worse. The worsening also works as a timer. Every patient is a race, which keeps the player moving between the shop, the workbench and the patient.</p>
+        <h3>Currency in three attempts</h3>
+        <ol>
+          <li>My first idea was to make every coin a separate physical object that players would drop into a piggy bank one by one. On paper it suited the physical style of the game, but picking up each coin would have been hectic and tedious.</li>
+          <li>The second version simply added money to the player's inventory. It was easy to use, but it broke the hands-on feel of everything else in the hut.</li>
+          <li>The final version is a single physical coin bag that players carry and deposit into the piggy bank. It keeps the physical interaction without the tedium.</li>
+        </ol>
+        <h3>Playtesting</h3>
+        <p>We ran three rounds of playtesting with more than 10 testers. Each round led to specific changes:</p>
+        <ul>
+          <li>Players could get stuck after losing or breaking a tool, so we added replacement tools to the shop.</li>
+          <li>Players asked to adjust field of view and mouse sensitivity, so we added a settings menu.</li>
+          <li>Some players felt dizzy while chopping and grinding, because those actions are driven by mouse movement and the camera moved along with it. We added a control: holding right-click freezes the camera, so players can chop and grind without the view swinging around.</li>
+        </ul>
+        <h3>Managing scope</h3>
+        <p>With only 13 weeks, the biggest challenge was not trying to do too much. We tracked progress with Trello and Gantt charts. That's how we decided early to cut a planned farming system, where players would grow their own ingredients, so we could finish the core loop properly.</p>
+      </section>
+
+      <section class="content-section" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <!-- Replace each placeholder with: <figure><img src="../assets/img/witch-doctor/shot1.jpg" alt="Describe the image"></figure> -->
+          <div class="shot-ph mono">Screenshot</div>
+          <div class="shot-ph mono">Screenshot</div>
+          <div class="shot-ph mono">Screenshot</div>
+        </div>
+      </section>
+
+      <section class="content-section" id="learned">
+        <h2>What I learned</h2>
+        <p>The main thing I took from this project was how important it is to manage scope. Cutting the farming system was hard, but it meant we finished a polished core loop instead of an unfinished bigger game. Playtesting also showed me that issues like motion discomfort and control settings only come up when real players get their hands on the game.</p>
+        <p>If I kept working on Witch Doctor, I would:</p>
+        <ul>
+          <li><strong>Make NPCs grabbable</strong> like every other object. I started building this, but it was too buggy to ship in time.</li>
+          <li><strong>Bring back the farming system</strong>, so players can grow ingredients instead of only buying them.</li>
+          <li><strong>Add a day system or levels.</strong> Right now the game continues endlessly, and a structure would give players goals and a sense of progress.</li>
+        </ul>
+      </section>
+    </article>
+
+    <aside class="project-aside">
+      <div class="panel" data-project-info></div>
+      <nav class="panel toc" aria-label="On this page">
+        <h2 class="panel-title mono">On this page</h2>
+        <ol>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#role">My role</a></li>
+          <li><a href="#process">Design process</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#learned">What I learned</a></li>
+        </ol>
+      </nav>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <nav class="pager" data-project-pager aria-label="More projects"></nav>
+  </div>
+</main>
+</div>
+<script src="../assets/js/projects.js"></script>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

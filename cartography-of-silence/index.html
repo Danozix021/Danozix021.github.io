@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Project | Daniel Achkar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<!--
+  PROJECT PAGE
+  1. Set data-slug below to this folder's name (must match the slug in assets/js/projects.js).
+  2. The title, one-liner, details panel, video and previous/next buttons fill in automatically.
+  3. Replace each grey "To add" box below with your own text and images.
+     Images go in assets/img/<slug>/ and are linked as ../assets/img/<slug>/file.jpg
+-->
+<div id="app" data-root="../" data-page="project" data-slug="cartography-of-silence">
+<main>
+  <header class="page-head">
+    <div class="wrap" data-project-head></div>
+  </header>
+
+  <div class="wrap project-layout">
+    <article>
+      <div class="media" data-project-media></div>
+
+      <section class="content-section" id="overview">
+        <h2>Overview</h2>
+        <p>Cartography of Silence is a narrative game set in a medieval map-maker's stall. Adventurers, treasure hunters and strangers come to your booth asking for a map. Some want to find a dungeon. Others need a good spot to hide treasure, such as a forest next to a river, or somewhere near a landmark.</p>
+        <p>Using your large map of the world, you find a place that fits their request. You mark it, cut out a small piece of the map and hand it over.</p>
+        <p>The next day, a letter arrives. It might be from the traveller, thanking you with their name and portrait: "It was the perfect spot." Or it might be from a relative: "My husband went where your map sent him. He hasn't come back in three days."</p>
+        <p>You're paid for every map, and you need the money to clear your debt to the Crown. But not every customer can be trusted, and you can send someone to the wrong place on purpose. A goblin might beg you to mislead the hunters coming after his people, who stole wheat from nearby farms to survive. Later, the hunters arrive and ask for a map to the goblin camp. Whoever you help, the choice comes back later in the game.</p>
+        <p>We made a prototype in Unity over 7 weeks, in a team of three.</p>
+        <ul>
+          <li><strong>In the prototype:</strong> NPCs arrive with a request, the player places markers on the world map, and the game checks whether the location is correct. It includes simple art for the map and the characters.</li>
+          <li><strong>Designed for the full game:</strong> the moral dilemmas, the factions and their territory, the follow-up letters, the debt system and the multiple endings.</li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="role">
+        <h2>My role</h2>
+        <p>I was the only designer on the team. Everyone helped with a bit of everything, but one teammate focused on art and the other on programming.</p>
+        <ul>
+          <li>Created the game concept and designed the core loop: reading requests, finding locations and handing over maps.</li>
+          <li>Designed the factions (the Crown, a cult and the goblins) and how their control of the world map changes based on the player's choices.</li>
+          <li>Designed the consequence system: next-day letters, the player's debt to the Crown, and the multiple endings.</li>
+          <li>Wrote the moral dilemmas, including the goblin and hunter storyline.</li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="process">
+        <h2>Design process</h2>
+        <h3>A small job with big consequences</h3>
+        <p>The name comes from the core idea. A person sitting quietly at a small stall can shape the whole world, in the same way that politicians make decisions at a desk that affect everyone's lives. The player never leaves the booth, but every map they hand over changes something out there.</p>
+        <h3>Finding the location</h3>
+        <p>Requests describe a kind of place, not an exact spot: "a forest next to the river" or "somewhere near the old tower". The player has to read the world map and choose a place that fits. That keeps each request a small puzzle, and it means a mistake can be accidental or deliberate.</p>
+        <h3>Showing consequences</h3>
+        <p>I wanted players to feel the results of their choices without long cutscenes. Each morning, letters arrive from the people you helped, or from their families. A name and portrait turn a request into a person. At the same time, the world map updates every day to show which faction controls each region, so the bigger picture shifts as a result of small decisions.</p>
+        <h3>Factions and endings</h3>
+        <p>The Crown, a cult and the goblins all compete for control of the map. The game can end in several ways, depending on what the player does:</p>
+        <ul>
+          <li>the Crown arrests you for working against it too often</li>
+          <li>the goblins take over the kingdom</li>
+          <li>you clear your debt</li>
+        </ul>
+        <h3>Keeping it uncomfortable, but not too much</h3>
+        <p>The hardest balance was making the dilemmas uncomfortable enough to matter without making the game unpleasant to play. I also had to make a medieval fantasy world reflect real-world issues without the message becoming heavy-handed.</p>
+      </section>
+
+      <section class="content-section" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <!-- Replace each placeholder with: <figure><img src="../assets/img/cartography-of-silence/shot1.jpg" alt="Describe the image"></figure> -->
+          <div class="shot-ph mono">Screenshot</div>
+          <div class="shot-ph mono">Screenshot</div>
+          <div class="shot-ph mono">Screenshot</div>
+        </div>
+      </section>
+
+      <section class="content-section" id="learned">
+        <h2>What I learned</h2>
+        <p>This project taught me how much a game can say through a simple mechanic. Handing someone a map is a small action, but adding consequences to it turned it into a moral decision.</p>
+        <p>It also showed me the difference between a design on paper and a playable game. The full system of factions, letters and endings is designed, but there wasn't time to build it in seven weeks.</p>
+        <p>If I continued the project, I would:</p>
+        <ul>
+          <li><strong>Build the moral dilemmas and faction system</strong> into the playable game.</li>
+          <li><strong>Improve the mapping system</strong>, so finding a location feels more like real map reading.</li>
+          <li><strong>Polish the concept into a complete game</strong>, then playtest it properly to see whether the dilemmas land the way I intended.</li>
+        </ul>
+      </section>
+    </article>
+
+    <aside class="project-aside">
+      <div class="panel" data-project-info></div>
+      <nav class="panel toc" aria-label="On this page">
+        <h2 class="panel-title mono">On this page</h2>
+        <ol>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#role">My role</a></li>
+          <li><a href="#process">Design process</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#learned">What I learned</a></li>
+        </ol>
+      </nav>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <nav class="pager" data-project-pager aria-label="More projects"></nav>
+  </div>
+</main>
+</div>
+<script src="../assets/js/projects.js"></script>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

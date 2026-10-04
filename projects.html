@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projects | Daniel Achkar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="app" data-root="" data-page="projects">
+<main>
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow mono">Level select</p>
+      <h1>Projects</h1>
+      <p class="lede">Games, prototypes and systems from my degree. Choose a project to see the video, my role and how it was made.</p>
+    </div>
+  </header>
+  <section class="section">
+    <div class="wrap">
+      <div class="toolbar">
+        <div class="filters" data-filters role="group" aria-label="Filter projects"></div>
+        <span class="mono muted" data-count aria-live="polite"></span>
+      </div>
+      <!-- Cards come from assets/js/projects.js -->
+      <div class="grid" data-project-grid="all"></div>
+    </div>
+  </section>
+</main>
+</div>
+<script src="assets/js/projects.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
