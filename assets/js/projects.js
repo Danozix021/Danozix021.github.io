@@ -44,7 +44,7 @@ window.PROJECTS = [
     tags: ["Design", "Programming"],
     featured: true,
     thumbnail: "",
-    video: ""
+    video: "https://youtu.be/KPC-AGrxoFc"
   },
   {
     slug: "cartography-of-silence",

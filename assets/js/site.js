@@ -16,7 +16,8 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
-  function link(path) { return root + path; }
+  function link(path) { return /^https?:\/\//.test(path) ? path : root + path; }
+  function youtubeId(url) { var m = (url || "").match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/); return m ? m[1] : ""; }
   function projectUrl(p) { return link(p.slug + "/index.html"); }
   function initials(t) {
     return t.split(/\s+/).filter(function (w) { return /^[A-Z0-9]/i.test(w) && !/^(of|a|the)$/i.test(w); })
@@ -78,6 +79,10 @@
   function thumb(p) {
     if (p.thumbnail) {
       return '<img src="' + link(p.thumbnail) + '" alt="" loading="lazy">';
+    }
+    // No thumbnail set: use the YouTube video's own thumbnail if there is one
+    if (youtubeId(p.video)) {
+      return '<img src="https://img.youtube.com/vi/' + youtubeId(p.video) + '/hqdefault.jpg" alt="" loading="lazy">';
     }
     return '<div class="thumb-ph" style="--h:' + hue(p.slug) + '"><span>' + esc(initials(p.title)) + '</span></div>';
   }
@@ -162,9 +167,9 @@
 
     var media = document.querySelector("[data-project-media]");
     if (media) {
-      var yt = (p.video || "").match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/);
+      var yt = youtubeId(p.video);
       if (yt) {
-        media.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + yt[1] + '" title="' + esc(p.title) + ' gameplay video" allowfullscreen></iframe>';
+        media.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + yt + '" title="' + esc(p.title) + ' gameplay video" allowfullscreen></iframe>';
       } else if (p.video) {
         media.innerHTML = '<video controls preload="metadata" src="' + link(p.video) + '"></video>';
       } else {
