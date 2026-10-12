@@ -74,7 +74,7 @@ window.PROJECTS = [
     tags: ["Programming", "AI"],
     featured: true,
     thumbnail: "",
-    video: ""
+    video: "https://youtu.be/xO8S_IAGJ74"
   },
   {
     slug: "a-tale-of-battle",
